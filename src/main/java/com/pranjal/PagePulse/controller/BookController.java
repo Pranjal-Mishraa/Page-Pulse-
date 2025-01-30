@@ -28,19 +28,6 @@ public class BookController {
     }
 
 
-
-//    @Operation(summary = "Get a book by name", description = "Find a book in the library by its name")
-//
-//    @GetMapping("/{name}")
-//    public ResponseEntity<?> getBookByName(@PathVariable String name) {
-//        Optional<Book> book = bookService.findByName(name);
-//        return book.map(value -> ResponseEntity.ok("Book found \n" + value))
-//                .orElse(  ResponseEntity.status(HttpStatus.NOT_FOUND)
-//                        .body("Book not found!"));
-//    }
-
-
-
     @Operation(summary = "Add a new book", description = "Create a new book and add it to the library")
 
     @PostMapping
@@ -85,3 +72,13 @@ public class BookController {
         return bookService.searchBooksByTitle(title);
     }
 }
+
+//    @Operation(summary = "Get a book by name", description = "Find a book in the library by its name")
+//
+//    @GetMapping("/{name}")
+//    public ResponseEntity<?> getBookByName(@PathVariable String name) {
+//        Optional<Book> book = bookService.findByName(name);
+//        return book.map(value -> ResponseEntity.ok("Book found \n" + value))
+//                .orElse(  ResponseEntity.status(HttpStatus.NOT_FOUND)
+//                        .body("Book not found!"));
+//    }

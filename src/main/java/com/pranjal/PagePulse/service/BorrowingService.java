@@ -52,7 +52,7 @@ public class BorrowingService {
 //                        book.setAvailable(false);
 //                    }
                     Borrowing savedBorrowing = borrowingRepository.save(borrowing);
-                    return ResponseEntity.ok(savedBorrowing);
+                    return ResponseEntity.ok("Book has been borrowed and your Borrowing ID is : "  + borrowing.getBorrowing_id() );
                 } else {
                     return ResponseEntity.status(HttpStatus.BAD_REQUEST)
                             .body("Book is not available at this time.");

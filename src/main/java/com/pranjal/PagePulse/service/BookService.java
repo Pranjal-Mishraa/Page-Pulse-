@@ -29,6 +29,9 @@ public class BookService {
             Optional<Book> existingBookOpt = bookRepository.findByTitle(book.getTitle());
             if (existingBookOpt.isPresent()) {
                 Book existingBook = existingBookOpt.get();
+                if(book.getCount() <= 0){
+                    return  ResponseEntity.badRequest().body("Count must be greater than 0 ");
+                }
                 existingBook.setCount(existingBook.getCount() + book.getCount());
 //                existingBook.setAvailable(book.isAvailable());
                 return ResponseEntity.ok("Book count updated successfully");
